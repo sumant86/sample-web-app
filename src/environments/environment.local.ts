@@ -1,7 +1,7 @@
 export const environment = {
-  local: false,
+  local: true,
   dev: false,
   test: false,
   stage: false,
-  prod: true
+  prod: false
 };

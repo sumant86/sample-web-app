@@ -37,7 +37,15 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
+            },
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -46,8 +54,10 @@
               ],
               "optimization": true,
               "outputHashing": "all",
+              "extractCss": true,
               "sourceMap": false,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -63,6 +73,62 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "stage": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stage.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "6mb"
+                }
+              ]
+            },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "6mb"
+                }
+              ]
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
             }
           }
         },
@@ -72,8 +138,20 @@
             "browserTarget": "sample-web-app:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "sample-web-app:build:production"
+            "local": {
+              "browserTarget": "sample-web-app:build:local"
+            },
+            "prod": {
+              "browserTarget": "sample-web-app:build:prod"
+            },
+            "stage": {
+              "browserTarget": "sample-web-app:build:stage"
+            },
+            "test": {
+              "browserTarget": "sample-web-app:build:test"
+            },
+            "dev": {
+              "browserTarget": "sample-web-app:build:dev"
             }
           }
         },

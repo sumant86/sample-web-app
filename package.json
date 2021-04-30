@@ -4,8 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "start:local": "ng serve --configuration=local",
+    "build": "ng build && npm i -D typescript",
+    "build:ci": "ng build && echo 'Cleaning up node modules' && rmdir /s /q node_modules && npm i -D typescript",
+    "build:dev": "ng build --configuration=dev && npm i -D typescript",
+    "build:test": "ng build --configuration=test && npm i -D typescript",
+    "build:stage": "ng build --configuration=stage && npm i -D typescript",
+    "build:prod": "ng build --configuration=prod && npm i -D typescript",
     "test": "ng test",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "eslint": "eslint --fix -c .eslintrc.json --ext .ts src"
