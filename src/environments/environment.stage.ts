@@ -3,5 +3,6 @@ export const environment = {
   dev: false,
   test: false,
   stage: true,
-  prod: false
+  prod: false,
+  apiEndPoint: "./assets/data"
 };

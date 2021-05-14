@@ -7,7 +7,8 @@ export const environment = {
   dev: false,
   test: false,
   stage: false,
-  prod: false
+  prod: false,
+  apiEndPoint: "./assets/data"
 };
 
 /*
