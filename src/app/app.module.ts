@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
-
+import { SharedModule } from './shared/shared.module'
 import { ApiService } from "./core/services/api.service"
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ApiService } from "./core/services/api.service"
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
