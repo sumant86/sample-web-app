@@ -4,5 +4,7 @@ export const environment = {
   test: false,
   stage: true,
   prod: false,
-  apiEndPoint: "./assets/data"
+  apiEndPoint: "./assets/data",
+  API_ROOT_AUTH: '.auth/.me',
+  API_AUTH_REFRESH: '.auth/refresh'
 };

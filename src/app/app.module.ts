@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from './shared/shared.module'
 import { ApiService } from "./core/services/api.service"
+import { AuthInterceptor } from './core/services/auth-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,12 @@ import { ApiService } from "./core/services/api.service"
     HttpClientModule,
     SharedModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
